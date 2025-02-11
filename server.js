@@ -13,7 +13,7 @@ app.use(express.json());  // Parse JSON request body
 app.get("/blynk/:token/pin/:pin", async (req, res) => {
     const { token, pin } = req.params;
     //const blynkUrl = `https://blynk.cloud/external/api/get?token=${token}&pin=${pin}`;
-    const blynkUrl = `https://192.168.1.103:9443/get?token=${token}&pin=${pin}';
+    const blynkUrl = `https://192.168.1.103:9443/get?token=${token}&pin=${pin}`;
 
     try {
         const response = await axios.get(blynkUrl);
@@ -27,7 +27,7 @@ app.get("/blynk/:token/pin/:pin", async (req, res) => {
 app.get("/blynk/:token/set/:pin/:value", async (req, res) => {
     const { token, pin, value } = req.params;
     //const blynkUrl = `https://blynk.cloud/external/api/update?token=${token}&${pin}=${value}`;
-    const blynkUrl = `https://192.168.1.103:9443/n4uICWW8guhAulM_Rwe2bG8hjcP3TzMB/update/V1?value=1';
+    const blynkUrl = `https://192.168.1.103:9443/n4uICWW8guhAulM_Rwe2bG8hjcP3TzMB/update/V1?value=1`;
 
     try {
         const response = await axios.get(blynkUrl);
