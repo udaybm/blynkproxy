@@ -27,8 +27,8 @@ app.get("/blynk/:token/pin/:pin", async (req, res) => {
 app.get("/blynk/:token/set/:pin/:value", async (req, res) => {
     const { token, pin, value } = req.params;
     //const blynkUrl = `https://blynk.cloud/external/api/update?token=${token}&${pin}=${value}`;
-    const blynkUrl = `https://192.168.1.103:9443/n4uICWW8guhAulM_Rwe2bG8hjcP3TzMB/update/V1?value=1`;
-
+    const blynkUrl = `https://192.168.1.103:9443/update?token=${token}&${pin}=${value}`;
+    //on thunkable side:https://blynkproxy.onrender.com/n4uICWW8guhAulM_Rwe2bG8hjcP3TzMB/set/V1/1
     try {
         const response = await axios.get(blynkUrl);
         res.json(response.data);
